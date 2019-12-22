@@ -1,0 +1,7 @@
+
+<app-show-list 
+[shows]="showsFromAppComponents1" 
+[selectedShow]="selectedShow"
+(showSelected)="onShowSelected($event)"></app-show-list>
+<h2 *ngIf="selectedShow">Selected show {{selectedShow.name}} </h2>
+

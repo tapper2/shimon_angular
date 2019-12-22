@@ -1,0 +1,28 @@
+<h1>Search App :</h1>
+<input type="text"  (input)="setKeyword(txt.value)" #txt  />
+<button (click)="search()">OK</button>
+<!-- [] () {} -->
+<img src="/assets/images/loading.gif" [hidden]="!isBusy" />
+
+<div>
+  <!-- <ul>
+    <li *ngFor="let item of result">
+      {{item}}
+    </li>
+  </ul> -->
+
+  <table border="1" *ngIf="result.length">
+    <thead>
+      <tr>
+        <th>Result</th>
+      </tr>
+    </thead>
+    <tbody>
+        <!-- [class.selected-item]="item === selectedItem" -->
+      <tr *ngFor="let item of result" (click)="setSelectedItem(item)" [ngClass]="{'selected-item': item === selectedItem}" >
+        <td>{{item}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <h2 *ngIf="selectedItem" > Selected person :  {{selectedItem}}</h2>
+</div>

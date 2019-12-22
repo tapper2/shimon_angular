@@ -1,0 +1,17 @@
+.main-container
+{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    
+}
+img{
+    width: 100px;
+}
+tbody tr {
+    cursor: pointer;
+}
+.selected-show{
+    background-color: red;
+    font-weight: bold;
+}
