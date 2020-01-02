@@ -1,0 +1,38 @@
+<div>
+    <input type="search" #searchBox (input)="onSeachChanged(searchBox.value)" />
+</div>
+
+<table class="blueTable">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Genres</th>
+            <th>Status</th>
+            <th>Score</th>
+            <th>Image</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let show of filtredList">
+            <td>
+                <a [href]="show.show.url" target="_blank">
+                    {{show.show.name}}
+                </a>
+            </td>
+            <td>
+                <ul>
+                    <li *ngFor="let g of show.show.genres">{{g}}</li>
+                </ul>
+            </td>
+            <td>
+                {{show.show.status}}
+            </td>
+            <td>
+                {{show.score}}
+            </td>
+            <td>
+                <img class="show-img" [src]="show.show.image.medium" />
+            </td>
+        </tr>
+    </tbody>
+</table>

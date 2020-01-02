@@ -1,0 +1,9 @@
+<div>
+    <div *ngFor="let q of questions" class="question-item" (click)="onQuestionClick(q)" 
+    [ngClass]="{
+                    correct: getQuestionStatus(q) === 'Correct',
+                    incorrect: getQuestionStatus(q) === 'Incorrect'}" [class.selected]="selectedQuestion === q">
+        {{q.questionText}}
+    </div>
+
+</div>

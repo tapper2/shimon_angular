@@ -1,0 +1,27 @@
+.question-container{
+    display: grid;
+    height: 250px;
+    width: 250px;
+    grid-template-rows: 60% 40%;
+    .question-text{
+        font-size: 24pt;
+        text-align: center;
+        padding:30px;
+    }
+    .options-container{
+        display: flex;
+        justify-content: space-between;
+        button{
+            font-size: 20pt;
+            &.correct{
+                background-color: green;
+            }
+            &.incorrect{
+                background-color: red;
+            }
+            &.mark-correct{
+                border: 2px solid green ;
+            }
+        }
+    }
+}

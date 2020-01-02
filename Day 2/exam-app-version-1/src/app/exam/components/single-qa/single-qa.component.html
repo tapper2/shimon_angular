@@ -1,0 +1,16 @@
+<div class="question-container">
+    <div class="question-text">
+        {{question.questionText}}
+    </div>
+    <div class="options-container">
+        <div *ngFor="let answer of question.options" class="options">
+            <button 
+            [class.correct]="getQuestionStatus() === 'Correct' && answer === question.userAnswer"
+            [class.incorrect]="getQuestionStatus() === 'Incorrect' && answer === question.userAnswer"
+            [class.mark-correct]="getQuestionStatus() === 'Incorrect' && answer === question.correctAnswer"
+            [disabled]="getQuestionStatus() !== 'NotAnswered'"
+            (click)="onAnswerClick(answer)">{{answer}}</button>
+        </div>
+    </div>
+
+</div>

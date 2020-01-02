@@ -1,0 +1,22 @@
+.question-item{
+    text-align: center;
+    margin:10px;
+    border:1px solid black;
+    border-radius: 9px;
+    padding: 5px;
+    font-size: 19pt;
+    cursor: pointer;
+    &.selected{
+        background-color: darkslategray;
+        font-weight: bold;
+    }
+    &.correct{
+        background-color: green;
+    }
+    &.incorrect{
+        background-color: red;
+    }
+    &:hover{
+        background-color: cornflowerblue;
+    }
+}

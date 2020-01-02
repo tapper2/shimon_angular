@@ -1,0 +1,11 @@
+.container{
+    display: grid;
+    width: 100%;
+    height: 100vh;
+    grid-template-rows: 80% 20%;
+    grid-template-columns: 20% 80%;
+
+    .footer{
+        grid-column: 1/3;
+    }
+}

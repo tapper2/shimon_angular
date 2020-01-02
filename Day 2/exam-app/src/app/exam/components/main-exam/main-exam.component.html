@@ -1,0 +1,14 @@
+<div class="container">
+    <div>
+        <app-qa-list [questions]="allQuestions" (selectQuestionRequested)="onSelectQuestionRequested($event)"
+            [selectedQuestion]="selectedQuestion"></app-qa-list>
+    </div>
+    <div>
+        <app-single-qa *ngIf="selectedQuestion" (userAnswer)="onUserAnswer($event)" [question]="selectedQuestion">
+        </app-single-qa>
+    </div>
+    <div>
+        Your grade : {{getCurrentGrade()}} / {{allQuestions.length}}
+    </div>
+
+</div>

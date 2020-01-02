@@ -1,0 +1,35 @@
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { CountService } from '../services/count.service';
+import { Subscription } from 'rxjs';
+
+@Component({
+    selector: 'app-count',
+    templateUrl: './count.component.html',
+    styleUrls: ['./count.component.scss']
+})
+export class CountComponent implements OnInit, OnDestroy {
+
+    sub: Subscription;
+    count: number = 0;
+    constructor(private countService: CountService) { }
+
+    ngOnInit() {
+        this.sub = this.countService.countChanged.subscribe(num => {
+            this.count = num;
+            console.log("count", this.count);
+        },);
+    }
+    ngOnDestroy() {
+        if (this.sub) {
+            this.sub.unsubscribe();
+        }
+    }
+    plus() {
+        this.countService.plus();
+    }
+    minus() {
+        this.countService.minus();
+
+    }
+
+}
