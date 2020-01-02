@@ -1,0 +1,12 @@
+<h2>Add new show</h2>
+<app-edit-add-show (editingFinished)="onEditingFinished($event, true)"></app-edit-add-show>
+
+<hr>
+
+<div *ngIf="selectedShow">
+    <h2>Edit {{selectedShow.name}}</h2>
+    <app-edit-add-show [show]="selectedShow" (editingFinished)="onEditingFinished($event, false)"></app-edit-add-show>
+</div>
+<app-shows-list (deleteShowRequired)="onDeleteShowRequired($event)" *ngIf="showList" [shows]="showList"
+    (selectShowRequired)="onSelectShowRequired($event)">
+</app-shows-list>

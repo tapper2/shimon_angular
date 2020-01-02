@@ -1,0 +1,35 @@
+<div>
+    <input type="search" #searchBox (input)="onSeachChanged(searchBox.value)" />
+</div>
+
+<table class="blueTable">
+    <thead>
+        <tr>
+            <th>actions</th>
+            <th>Name</th>
+            <th>Summary</th>
+            <th>Image</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let show of filtredList" (click)="onClick(show)">
+            <td>
+                <button (click)="onDeleteClick($event, show)">Delete show</button>
+            </td>
+            
+            <td>
+
+                <a [href]="show.url" target="_blank">
+                    {{show.name}}
+                </a>
+            </td>
+            <td [innerHTML]="show.summary">
+
+            </td>
+            <td>
+                <img class="show-img" [src]="show.image.medium" />
+            </td>
+        </tr>
+    </tbody>
+</table>

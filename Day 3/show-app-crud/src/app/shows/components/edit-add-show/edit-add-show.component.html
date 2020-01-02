@@ -1,0 +1,37 @@
+<div>
+    <form [formGroup]="showForm" (ngSubmit)="onSubmit()" >
+        <div>
+            <input type="text" placeholder="Movie name" formControlName="name">
+            <div>
+                {{showForm.controls.name.errors | json}}
+            </div>
+        </div>
+        <div>
+            <input type="url" placeholder="Url" formControlName="url" class="long-input" >
+            <div>
+                {{showForm.controls.url.errors | json}}
+            </div>
+        </div>
+
+        <div>
+            <button [disabled]="showForm.invalid">Save</button>
+        </div>
+    </form>
+
+    <!-- <table style="width: 100%; overflow: hidden;">
+        <tr>
+            <th>original object</th>
+            <th>Form value</th>
+        </tr>
+        <tr>
+            <td>
+                {{show | json}}
+            </td>
+            <td>
+                <pre>{{showForm.value | json}}</pre>
+            </td>
+
+        </tr>
+    </table> -->
+
+</div>
