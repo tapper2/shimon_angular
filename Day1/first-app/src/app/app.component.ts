@@ -15,6 +15,7 @@ export class AppComponent {
   }
 
   setKeyword(s: string) {
+    console.log("S : ", s)
     this.keyword = s;
   }
 

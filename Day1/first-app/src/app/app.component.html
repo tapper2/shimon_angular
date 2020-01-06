@@ -1,5 +1,5 @@
 <h1>Search App :</h1>
-<input type="text"  (input)="setKeyword(txt.value)" #txt  />
+<input type="text" (input)="setKeyword(txt.value)" #txt />
 <button (click)="search()">OK</button>
 <!-- [] () {} -->
 <img src="/assets/images/loading.gif" [hidden]="!isBusy" />
@@ -18,11 +18,12 @@
       </tr>
     </thead>
     <tbody>
-        <!-- [class.selected-item]="item === selectedItem" -->
-      <tr *ngFor="let item of result" (click)="setSelectedItem(item)" [ngClass]="{'selected-item': item === selectedItem}" >
+      <!-- [class.selected-item]="item === selectedItem" -->
+      <tr *ngFor="let item of result" (click)="setSelectedItem(item)"
+        [ngClass]="{'selected-item': item === selectedItem}">
         <td>{{item}}</td>
       </tr>
     </tbody>
   </table>
-  <h2 *ngIf="selectedItem" > Selected person :  {{selectedItem}}</h2>
+  <h2 *ngIf="selectedItem"> Selected person : {{selectedItem}}</h2>
 </div>

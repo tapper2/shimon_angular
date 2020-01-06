@@ -7,8 +7,6 @@ import { Show } from './models/show.model';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-
-
   onShowSelected(s: Show) {
     if (s.id !== 16) {
       this.selectedShow = s;
@@ -67,5 +65,6 @@ export class AppComponent {
       "summary": "<p>This haunting series follows the Winchester brothers as they crisscross the lonely and mysterious back roads of the country in their '67 Chevy Impala, hunting down every evil supernatural force they encounter along the way.</p>"
     }
   ];
+
   selectedShow: Show = this.showsFromAppComponents1[1];
 }
